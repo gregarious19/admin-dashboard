@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <div class="menu">
+      <button id="logoutButton">Logout</button>
+    </div>
+    <div class="dashboard-container">
+      <!-- User Profile Page -->
+      <div class="neomorphic-container profile-container">
+        <div class="profile-card">
+          <div class="profile-image">
+            <img id="profilePicture" alt="Profile Picture" />
+          </div>
+          <h2 id="name">Name</h2>
+          <button class="edit-button">Edit Name</button>
+          <p>Email: <span id="email">example@123.com</span></p>
+          <p>Phone: <span id="phone">1234567890</span></p>
+          <button class="change-password-button">Change Password</button>
+          <button id="openProfilePictureForm">Update Profile Picture</button>
+        </div>
+      </div>
+      <div class="neomorphic-container">
+        <h1>User Management Dashboard</h1>
+
+        <div class="user-list">
+          <!-- User cards will be dynamically added here using JavaScript -->
+        </div>
+      </div>
+    </div>
+    <!-- Update Profile Picture Form -->
+    <div id="uploadProfilePictureModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeProfilePictureModal">&times;</span>
+
+        <form id="uploadProfilePictureForm" enctype="multipart/form-data">
+          <label for="newProfilePicture">Upload New Profile Picture:</label>
+          <input
+            type="file"
+            id="newProfilePicture"
+            name="profilePicture"
+            accept="image/*"
+          />
+          <button type="submit">Upload</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Delete Account Confirmation Modal -->
+    <div class="neomorphic-modal hidden">
+      <h1>Confirm Account Deletion</h1>
+      <p>Are you sure you want to delete your account?</p>
+      <button class="cancel-button">Cancel</button>
+      <button class="confirm-button">Confirm</button>
+    </div>
+    <!-- Change Name Modal -->
+    <div class="modal" id="changeNameModal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Change Name</h2>
+        <form id="changeNameForm">
+          <label for="newName">New Name:</label>
+          <input type="text" id="newName" name="newName" required />
+          <button type="submit">Save</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Change Password Modal -->
+    <div id="changePasswordModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <h2>Change Password</h2>
+        <form id="changePasswordForm">
+          <label for="currentPassword">Current Password:</label>
+          <input
+            type="password"
+            id="currentPassword"
+            name="currentPassword"
+            required
+          />
+
+          <label for="newPassword">New Password:</label>
+          <input type="password" id="newPassword" name="newPassword" required />
+
+          <label for="confirmNewPassword">Confirm New Password:</label>
+          <input
+            type="password"
+            id="confirmNewPassword"
+            name="confirmNewPassword"
+            required
+          />
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Modify User details -->
+    <div id="modifyUserModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeModifyUserModal">&times;</span>
+
+        <form id="updateUserForm">
+          <label for="newUserName">New Name:</label>
+          <input type="text" id="newUserName" />
+          <label for="newUserPassword">New Password:</label>
+          <input type="password" id="newUserPassword" />
+
+          <button type="submit">Submit</button>
+        </form>
+
+        <form id="deleteUserForm">
+          <button type="submit">Delete User</button>
+        </form>
+      </div>
+    </div>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
